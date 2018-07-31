@@ -9,7 +9,7 @@ static int getRandomNumber(int min, int max)
 	return static_cast<int>(rand() * fraction * (max - min + 1) + min);
 }
 
-std::string Rabbit::rabbitNames[][Rabbit::nameLength] = {
+const std::string Rabbit::rabbitNames[][Rabbit::nameLength] = {
 	{ "Charlie" ,"Peanut", "Jack", "Rocky", "Gizmo", "Toby ", "Oliver", "Oreo", "Pepper", "Jake", "Bear", "Dexter", "Snickers", "Romeo", "Sam" },
 { "Bella" ,"Molly", "Daisy", "Chloe", "Lily", "Harley ", "Luna", "Baby", "Zoe", "Missy", "Mia", "Kitty", "Abby", "Juliet", "Murphy" },
 { "Joker" ,"Darth Maul", "Voldemort", "Magneto", "Johnny", "Terminator ", "Sauron", "Michael Meyers", "Loki", "Bane", "Alien", "Darth Vader", "Davy Jones", "Khan", "Thanos" }
@@ -22,15 +22,13 @@ Rabbit Rabbit::getRandomRabbit() {
 
 	gender = rand() % 2;
 	isRadioactive = rand() % 101 < 2;
-	if (isRadioactive)
-		name = rabbitNames[2][rand() % nameLength];
-	else
-		name = rabbitNames[gender][rand() % nameLength];
+
+	name = rabbitNames[(isRadioactive ? 2 : gender)][rand() % nameLength];
 	color = rabbitColor[rand() % colorLength];
 	return Rabbit(name, color, age, gender, isRadioactive);
 }
 
-std::string Rabbit::rabbitColor[Rabbit::colorLength] = {
+const std::string Rabbit::rabbitColor[Rabbit::colorLength] = {
 	 "black" ,"white", "brown", "spotted", "grey"
 };
 Rabbit::Rabbit(std::string name, std::string color, int age, bool gender, bool isRadioactive)
@@ -42,8 +40,8 @@ Rabbit::Rabbit(const Rabbit& rab)
 {
 }
 std::ostream& operator <<(std::ostream& out, Rabbit& rabbit){
-	out << rabbit.m_name << " of color " << rabbit.m_color << " is " << (rabbit.m_gender ? "male" : "female")
-		<< ", " << rabbit.m_age << " old and " << (rabbit.m_isRadioactiveMutant ? "is" : "isn't") << " radioactive\n";
+	out << rabbit.m_name << " of color " << rabbit.m_color << " is " << (rabbit.m_gender ? "female" : "male")
+		<< ", " << rabbit.m_age << " years old and " << (rabbit.m_isRadioactiveMutant ? "is" : "isn't") << " radioactive.\n";
 	return out;
 }
 Rabbit::~Rabbit()

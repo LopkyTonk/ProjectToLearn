@@ -5,8 +5,8 @@ class Rabbit {
 private:
 	static const int nameLength = 15;
 	static const int colorLength = 5;
-	static std::string rabbitNames[3][nameLength];	// 3, lebo dve pohlavia a 1 radioaktivny, druhy parameter je pohlavie (0/1)
-	static std::string rabbitColor[colorLength];
+	static const std::string rabbitNames[3][nameLength];	// 3, lebo dve pohlavia a 1 radioaktivny, druhy parameter je pohlavie (0/1)
+	static const std::string rabbitColor[colorLength];	// prvy riadok su male, druhy su female, treti su radioaktivny
 
 	std::string m_name;
 	const std::string m_color;
