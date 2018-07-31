@@ -147,11 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Game_Manager.h" />
+    <ClInclude Include="Game_Map.h" />
+    <ClInclude Include="Rabbit.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bunny_Program.cpp" />
+    <ClCompile Include="Game_Manager.cpp" />
+    <ClCompile Include="Game_Map.cpp" />
+    <ClCompile Include="Rabbit.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
