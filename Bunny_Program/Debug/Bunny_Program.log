@@ -1,2 +1,9 @@
-﻿  Rabbit.cpp
+﻿  Game_Map.cpp
+  Generating Code...
+  Compiling...
+  Bunny_Program.cpp
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\bunny_program.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Rabbit.cpp
   Bunny_Program.vcxproj -> C:\Users\BUBI\Desktop\C++\Projekty\Jednoduchý\BunnyProject\Bunny_Program\Debug\Bunny_Program.exe
