@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Rabbit.h"
-
+#include <iostream>
 //static definition
 static int getRandomNumber(int min, int max)
 {
@@ -32,16 +32,15 @@ const std::string Rabbit::rabbitColor[Rabbit::colorLength] = {
 	 "black" ,"white", "brown", "spotted", "grey"
 };
 
-Rabbit::Rabbit()
-	:m_name(""), m_color(""), m_age(0), m_gender(0), m_isRadioactiveMutant(0)
-{
+Rabbit::Rabbit(){
+	this->emptyRabbit();
 }
 Rabbit::Rabbit(std::string name, std::string color, int age, bool gender, bool isRadioactive)
-	:m_name(name), m_color(color), m_age(age), m_gender(gender), m_isRadioactiveMutant(isRadioactive)
+	:m_name(name), m_color(color), m_age(age), m_gender(gender), m_isRadioactiveMutant(isRadioactive),m_isEmpty(0)
 {
 }
 Rabbit::Rabbit(const Rabbit& rab)
-	: m_name(rab.m_name), m_color(rab.m_color), m_age(rab.m_age), m_gender(rab.m_gender), m_isRadioactiveMutant(rab.m_isRadioactiveMutant)
+	: m_name(rab.m_name), m_color(rab.m_color), m_age(rab.m_age), m_gender(rab.m_gender), m_isRadioactiveMutant(rab.m_isRadioactiveMutant),m_isEmpty(0)
 {
 }
 /*
@@ -64,9 +63,16 @@ std::ostream& operator <<(std::ostream& out, Rabbit& rabbit) {
 bool operator ==(const Rabbit& r1, const Rabbit& r2) {
 	return (r1.m_name == r2.m_name &&
 		r1.m_color == r2.m_color &&
-		r1.m_age == r2.m_age&&
-		r1.m_gender == r2.m_gender&&
+		r1.m_age == r2.m_age &&
+		r1.m_gender == r2.m_gender &&
 		r1.m_isRadioactiveMutant == r2.m_isRadioactiveMutant);
+}
+bool operator !=(const Rabbit& r1, const Rabbit& r2) {
+	return (r1.m_name != r2.m_name ||
+		r1.m_color != r2.m_color ||
+		r1.m_age != r2.m_age ||
+		r1.m_gender != r2.m_gender ||
+		r1.m_isRadioactiveMutant != r2.m_isRadioactiveMutant);
 }
 void Rabbit::operator =(const Rabbit& r) {
 	this->m_name = r.m_name;
@@ -74,12 +80,24 @@ void Rabbit::operator =(const Rabbit& r) {
 	this->m_age = r.m_age;
 	this->m_gender = r.m_gender;
 	this->m_isRadioactiveMutant = r.m_isRadioactiveMutant;
+	this->m_isEmpty = r.m_isEmpty;
+	this->setCoordinates(r.m_coordinate_x, r.m_coordinate_y);
 }
+
 Rabbit::~Rabbit()
 {
 }
 
 void Rabbit::printRabbit(){
+	std::cout << '{' << m_coordinate_x +1<< ',' << m_coordinate_y +1<< ")\n";;
+}
 
+void Rabbit::emptyRabbit() {
+	m_name = "";
+	m_color = "";
+	m_age = 0;
+	m_gender = 0;
+	m_isRadioactiveMutant = 0;
+	m_isEmpty = 1;
 }
 

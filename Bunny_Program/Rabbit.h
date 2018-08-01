@@ -14,6 +14,7 @@ private:
 	int m_coordinate_x, m_coordinate_y;
 	bool m_gender;
 	bool m_isRadioactiveMutant;
+	bool m_isEmpty;
 
 public:
 	static Rabbit getRandomRabbit();
@@ -24,12 +25,14 @@ public:
 
 	friend std::ostream& operator <<(std::ostream&, Rabbit&);
 	friend bool operator ==(const Rabbit&, const Rabbit&);
+	friend bool operator !=(const Rabbit&, const Rabbit&);
 	void operator =(const Rabbit&);
 	bool isRadioactive() { return m_isRadioactiveMutant; }
-	bool isEmpty() { return m_name == ""; }
+	bool isEmpty() { return m_isEmpty; }
 	void setCoordinates(int x, int y) { m_coordinate_x = x; m_coordinate_y = y; }
 	int get_X() { return m_coordinate_x; }
 	int get_Y() { return m_coordinate_y; }
+	void emptyRabbit();
 	void printRabbit();
 };
 
