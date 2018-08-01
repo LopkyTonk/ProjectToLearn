@@ -5,7 +5,7 @@
 #include <cassert>
 
 Game_Map::Game_Map()
-	:m_dimensions(10)
+	:m_dimensions(60)
 {
 	for (int i = 0; i < m_dimensions; ++i) {
 		for (int j = 0; j < m_dimensions; ++j) {
@@ -20,7 +20,7 @@ Game_Map::~Game_Map(){
 }
 Game_Map& Game_Map::addToMap(short x, short y, Rabbit &rabbit) {
 	if (x < m_dimensions && y < m_dimensions) {
-		rabbit.setCoordinates(x, y);
+		rabbit.move(x, y);
 		m_gameMap[x][y] = rabbit;
 	}
 	return *this;
@@ -74,7 +74,6 @@ Game_Map& Game_Map::printSpace(Rabbit** r) {
 		else
 			std::cout << "0 ";
 	}
-	std::cout << "\nfinished1\n";
 	return *this;
 }
 

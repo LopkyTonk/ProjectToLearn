@@ -43,15 +43,11 @@ Rabbit::Rabbit(const Rabbit& rab)
 	: m_name(rab.m_name), m_color(rab.m_color), m_age(rab.m_age), m_gender(rab.m_gender), m_isRadioactiveMutant(rab.m_isRadioactiveMutant),m_isEmpty(0)
 {
 }
-/*
-std::ostream& operator <<(std::ostream& out, Rabbit& rabbit){
-	out << rabbit.m_name << " of color " << rabbit.m_color << " is " << (rabbit.m_gender ? "female" : "male")
-		<< ", " << rabbit.m_age << " years old and " << (rabbit.m_isRadioactiveMutant ? "is" : "isn't") << " radioactive.\n";
-	return out;
-}*/
 std::ostream& operator <<(std::ostream& out, Rabbit& rabbit) {
 	char c;
-	if (rabbit.m_gender)
+	if (rabbit.isRadioactive())
+		c = 'x';
+	else if(rabbit.m_gender)
 		c = 'm';
 	else
 		c = 'f';
@@ -81,15 +77,18 @@ void Rabbit::operator =(const Rabbit& r) {
 	this->m_gender = r.m_gender;
 	this->m_isRadioactiveMutant = r.m_isRadioactiveMutant;
 	this->m_isEmpty = r.m_isEmpty;
-	this->setCoordinates(r.m_coordinate_x, r.m_coordinate_y);
+	this->move(r.m_x, r.m_y);
 }
 
 Rabbit::~Rabbit()
 {
 }
-
+void Rabbit::move(int x, int y) {
+	m_x = x; 
+	m_y = y; 
+}
 void Rabbit::printRabbit(){
-	std::cout << '{' << m_coordinate_x +1<< ',' << m_coordinate_y +1<< ")\n";;
+	std::cout << '{' << m_x +1<< ',' << m_y +1<< ")\n";;
 }
 
 void Rabbit::emptyRabbit() {

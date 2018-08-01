@@ -11,7 +11,7 @@ private:
 	std::string m_name;
 	std::string m_color;
 	int m_age;
-	int m_coordinate_x, m_coordinate_y;
+	int m_x, m_y;
 	bool m_gender;
 	bool m_isRadioactiveMutant;
 	bool m_isEmpty;
@@ -29,9 +29,10 @@ public:
 	void operator =(const Rabbit&);
 	bool isRadioactive() { return m_isRadioactiveMutant; }
 	bool isEmpty() { return m_isEmpty; }
-	void setCoordinates(int x, int y) { m_coordinate_x = x; m_coordinate_y = y; }
-	int get_X() { return m_coordinate_x; }
-	int get_Y() { return m_coordinate_y; }
+	int get_X() { return m_x; }
+	int get_Y() { return m_y; }
+	bool getGender() { return m_gender; }
+	void move(int x, int y);
 	void emptyRabbit();
 	void printRabbit();
 };
