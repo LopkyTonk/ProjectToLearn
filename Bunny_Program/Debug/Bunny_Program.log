@@ -1,3 +1,19 @@
-﻿  Bunny_Program.cpp
+﻿  Game_Map.cpp
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(91): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(115): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(126): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(143): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(169): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(177): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(183): warning C4018: '<': signed/unsigned mismatch
+c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\game_map.cpp(179): warning C4390: ';': empty controlled statement found; is this the intent?
+  Bunny_Program.cpp
 c:\users\bubi\desktop\c++\projekty\jednoduchý\bunnyproject\bunny_program\bunny_program.cpp(9): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Game_Manager.cpp
   Bunny_Program.vcxproj -> C:\Users\BUBI\Desktop\C++\Projekty\Jednoduchý\BunnyProject\Bunny_Program\Debug\Bunny_Program.exe

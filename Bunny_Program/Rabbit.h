@@ -1,4 +1,6 @@
 #pragma once
+#ifndef RABBIT
+#define RABBIT
 #include <string>
 
 class Rabbit {
@@ -11,6 +13,7 @@ private:
 	std::string m_name;
 	std::string m_color;
 	int m_age;
+	int m_generation;
 	int m_x, m_y;
 	bool m_gender;
 	bool m_isRadioactiveMutant;
@@ -20,20 +23,30 @@ public:
 	static Rabbit getRandomRabbit();
 	Rabbit();				//default constructor
 	Rabbit(const Rabbit& rab);	//copy consttructor
-	Rabbit(std::string, std::string, int, bool, bool);
+	Rabbit(std::string, std::string, int, int, bool, bool);
 	~Rabbit();
 
 	friend std::ostream& operator <<(std::ostream&, Rabbit&);
 	friend bool operator ==(const Rabbit&, const Rabbit&);
 	friend bool operator !=(const Rabbit&, const Rabbit&);
+	/*const bool operator <=(const Rabbit&);
+	const bool operator >=(const Rabbit&);*/
+	const bool operator <(const Rabbit&);
+	const bool operator >(const Rabbit&);
 	void operator =(const Rabbit&);
+	void operator %(Rabbit&);	//swapCoordinates
+	Rabbit reproduce();
 	bool isRadioactive() { return m_isRadioactiveMutant; }
 	bool isEmpty() { return m_isEmpty; }
-	int get_X() { return m_x; }
-	int get_Y() { return m_y; }
-	bool getGender() { return m_gender; }
+	bool getGender() { return m_gender; }	//0 je male, 1 je female
+	int get_X() const { return m_x; }
+	int get_Y() const { return m_y; }
+	int getAge() const { return m_age; }
+	void makeRadioactive() { m_isRadioactiveMutant = true; }
 	void move(int x, int y);
+	void age();
 	void emptyRabbit();
 	void printRabbit();
 };
+#endif //!RABBIT
 
